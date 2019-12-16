@@ -46,17 +46,17 @@ export default class Menu {
       console.log('left, top, width, height: ', left, top, width, height);
       let geo;
       if ($el.id === 'sub') {
-        top = top + 85;
-        left = left - 105;
+        top = top + 75;
+        //left = left - 3;
         geo = new THREE.TextBufferGeometry($el.innerText, {
           font: f,
-          size: 50,
+          size: 30,
           height: 1
         });
       } else {
         geo = new THREE.TextBufferGeometry($el.innerText, {
           font: f,
-          size: 100,
+          size: 80,
           height: 1
         });
       }

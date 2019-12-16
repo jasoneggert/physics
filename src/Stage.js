@@ -85,8 +85,8 @@ export default class Scene {
   setCamera() {
     const fov = (180 * (2 * Math.atan(this.H /1 / perspective))) / Math.PI;
 
-    this.camera = new THREE.PerspectiveCamera(fov, this.W / this.H, 0.01, 6000);
-    this.camera.position.set(1117, -1000, perspective);
+    this.camera = new THREE.PerspectiveCamera(fov, this.W / this.H, 0.03, 6000);
+    this.camera.position.set(17, 2000, perspective);
   }
 
   setLights() {
