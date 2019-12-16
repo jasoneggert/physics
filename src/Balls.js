@@ -2,16 +2,16 @@ import * as THREE from "three";
 import C from "cannon";
 import gsap from "gsap";
 
-const colors = [0xff9e18, 0x3a8fff, 0x1affc1];
+const colors = [0x1affc1];
 
 export default class Balls {
   constructor(scene, world) {
     this.scene = scene;
     this.world = world;
-    this.count = 121;
+    this.count = 1200;
     this.size = 3;
-    this.W = window.innerWidth;
-    this.H = window.innerHeight;
+    this.W = window.innerWidth * 2;
+    this.H = window.innerHeight   * 2;
     this.target = new THREE.Vector3();
 
     this.setup();
@@ -30,8 +30,8 @@ export default class Balls {
     this.bodies = [];
 
     for (let i = 0; i < this.count; i++) {
-      const x = THREE.Math.randFloatSpread(this.W / 2);
-      const y = THREE.Math.randFloatSpread(this.H / 2);
+      const x = THREE.Math.randFloatSpread(this.W);
+      const y = THREE.Math.randFloatSpread(this.H);
       const z = THREE.Math.randFloatSpread(500);
       const scl = THREE.Math.randFloatSpread(0.5) + 1;
 

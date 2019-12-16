@@ -9,8 +9,8 @@ import { map } from "./utils";
 import CannonDebugRenderer from "./utils/CannonDebugRenderer";
 
 // CONSTANTS
-const perspective = 2000;
-const colors = [0x17cc9b, 0x1765cc, 0xcc8017];
+const perspective = 3000;
+const colors = [0xcc8017];
 
 export default class Scene {
   constructor() {
@@ -20,7 +20,7 @@ export default class Scene {
     this.H = window.innerHeight;
 
     this.world = new C.World();
-    this.world.gravity.set(0, 0, 0);
+    this.world.gravity.set(-1, 1, -1);
 
     this.mouse = new THREE.Vector3();
     this.targets = [];
@@ -86,7 +86,7 @@ export default class Scene {
     const fov = (180 * (2 * Math.atan(this.H /1 / perspective))) / Math.PI;
 
     this.camera = new THREE.PerspectiveCamera(fov, this.W / this.H, 0.03, 6000);
-    this.camera.position.set(17, 2000, perspective);
+    this.camera.position.set(17, 0, perspective);
   }
 
   setLights() {
