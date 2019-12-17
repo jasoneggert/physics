@@ -2,13 +2,13 @@ import * as THREE from "three";
 import C from "cannon";
 import gsap from "gsap";
 
-const colors = [0x1affc1];
+const colors = ['#fff'];
 
 export default class Balls {
   constructor(scene, world) {
     this.scene = scene;
     this.world = world;
-    this.count = 1200;
+    this.count = 1000;
     this.size = 3;
     this.W = window.innerWidth * 2;
     this.H = window.innerHeight   * 2;
@@ -18,7 +18,7 @@ export default class Balls {
   }
 
   setup() {
-    const color = gsap.utils.random(colors);
+    const color = '#70C5B2'
     this.mesh = new THREE.InstancedMesh(
       new THREE.SphereBufferGeometry(this.size, 16, 16),
       new THREE.MeshPhongMaterial({ color: color }),
@@ -30,10 +30,10 @@ export default class Balls {
     this.bodies = [];
 
     for (let i = 0; i < this.count; i++) {
-      const x = THREE.Math.randFloatSpread(this.W);
-      const y = THREE.Math.randFloatSpread(this.H);
+      const x = THREE.Math.randFloatSpread(this.W * 1.25);
+      const y = THREE.Math.randFloatSpread(this.H * 1.25);
       const z = THREE.Math.randFloatSpread(500);
-      const scl = THREE.Math.randFloatSpread(0.5) + 1;
+      const scl = THREE.Math.randFloatSpread(0.9) + 1;
 
       const body = new C.Body({
         mass: 0.4,

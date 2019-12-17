@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import C from 'cannon';
-import j from './fonts/abr_fatface_reg.typeface.json';
+import j from './fonts/lato_black.json';
 import { ev } from './utils';
 
 export default class Menu {
@@ -11,7 +11,7 @@ export default class Menu {
     this.W = window.innerWidth - window.innerWidth / 2;
     this.H = window.innerHeight - window.innerHeight / 2;
     this.menu = new THREE.Group();
-    this.baseColor = 0xd76135;
+    this.baseColor = '#70C5B2';
 
     this.matbox = new C.Material({
       restitution: 0.1,

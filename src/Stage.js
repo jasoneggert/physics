@@ -1,12 +1,12 @@
-import * as THREE from "three";
-import OrbitControls from "three-orbitcontrols";
-import C from "cannon";
-import Balls from "./Balls";
-import Menu from "./Menu";
-import gsap from "gsap";
-import { map } from "./utils";
+import * as THREE from 'three';
+import OrbitControls from 'three-orbitcontrols';
+import C from 'cannon';
+import Balls from './Balls';
+import Menu from './Menu';
+import gsap from 'gsap';
+import { map } from './utils';
 
-import CannonDebugRenderer from "./utils/CannonDebugRenderer";
+import CannonDebugRenderer from './utils/CannonDebugRenderer';
 
 // CONSTANTS
 const perspective = 3000;
@@ -14,7 +14,7 @@ const colors = [0xcc8017];
 
 export default class Scene {
   constructor() {
-    this.$container = document.getElementById("stage");
+    this.$container = document.getElementById('stage');
 
     this.W = window.innerWidth;
     this.H = window.innerHeight;
@@ -32,17 +32,17 @@ export default class Scene {
   }
 
   bindEvents() {
-    window.addEventListener("resize", () => {
+    window.addEventListener('resize', () => {
       this.onResize();
     });
-    window.addEventListener("mousemove", e => {
+    window.addEventListener('mousemove', e => {
       this.onMouseMove(e);
     });
 
-    document.addEventListener("enter", ({ detail }) => {
+    document.addEventListener('enter', ({ detail }) => {
       this.onEnter(detail.target);
     });
-    document.addEventListener("leave", ({ detail }) => {
+    document.addEventListener('leave', ({ detail }) => {
       this.onLeave(detail.target);
     });
   }
@@ -71,7 +71,7 @@ export default class Scene {
       antialias: true,
       canvas: this.$container
     });
-    this.renderer.setClearColor(0x202533);
+    this.renderer.setClearColor('#F0E68C');
     this.renderer.setSize(this.W, this.H);
     this.renderer.setPixelRatio(window.devicePixelRatio);
 
@@ -83,7 +83,7 @@ export default class Scene {
   }
 
   setCamera() {
-    const fov = (180 * (2 * Math.atan(this.H /1 / perspective))) / Math.PI;
+    const fov = (180 * (2 * Math.atan(this.H / 1 / perspective))) / Math.PI;
 
     this.camera = new THREE.PerspectiveCamera(fov, this.W / this.H, 0.03, 6000);
     this.camera.position.set(17, 0, perspective);
