@@ -1,6 +1,6 @@
 import * as THREE from 'three';
 import C from 'cannon';
-import j from './fonts/lato_black.json';
+import j from './fonts/abr_fatface_reg.typeface.json';
 import { ev } from './utils';
 
 export default class Menu {
