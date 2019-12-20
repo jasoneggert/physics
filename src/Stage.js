@@ -5,7 +5,7 @@ import Balls from './Balls';
 import Menu from './Menu';
 import gsap from 'gsap';
 import { map } from './utils';
-
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import CannonDebugRenderer from './utils/CannonDebugRenderer';
 
 // CONSTANTS
@@ -29,6 +29,7 @@ export default class Scene {
 
     this.setup();
     this.bindEvents();
+    
   }
 
   bindEvents() {
@@ -64,6 +65,7 @@ export default class Scene {
     this.addObjects();
 
     this.setupControls();
+    
   }
 
   setRender() {
@@ -109,6 +111,7 @@ export default class Scene {
   addObjects() {
     this.balls = new Balls(this.scene, this.world);
     this.menu = new Menu(this.scene, this.world);
+    //this.egg = new Egg(this.scene, this.world);
 
     this.mouseBody = new C.Body({
       mass: 0,

@@ -3,6 +3,7 @@ import C from "cannon";
 import gsap from "gsap";
 
 const colors = ['#fff'];
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
 export default class Balls {
   constructor(scene, world) {
@@ -13,11 +14,12 @@ export default class Balls {
     this.W = window.innerWidth * 2;
     this.H = window.innerHeight   * 2;
     this.target = new THREE.Vector3();
-
-    this.setup();
+  
+    this.setup(scene, this.W, this.H);
   }
 
-  setup() {
+  setup(scene, W, H) {
+    console.log('W: ', W);
     const color = '#70C5B2'
     this.mesh = new THREE.InstancedMesh(
       new THREE.SphereBufferGeometry(this.size, 16, 16),
@@ -26,9 +28,27 @@ export default class Balls {
     );
 
     this.scene.add(this.mesh);
+    const loader = new GLTFLoader();
+
+    loader.load(
+      './egg/scene.gltf',
+      function(gltf) {
+        const model = gltf.scene
+        scene.add(model);
+        if (model) model.rotation.x += 1.333;
+        if (model)  model.position.x = -100;
+        console.log('model: ', model);
+
+      },
+      undefined,
+      function(error) {
+        console.log('error: ', error.message);
+        console.error(error);
+      }
+    );
 
     this.bodies = [];
-
+    
     for (let i = 0; i < this.count; i++) {
       const x = THREE.Math.randFloatSpread(this.W * 1.25);
       const y = THREE.Math.randFloatSpread(this.H * 1.25);
@@ -50,7 +70,7 @@ export default class Balls {
       this.bodies.push(body);
       this.world.addBody(body);
     }
-
+   
     this.setPosition();
   }
 
