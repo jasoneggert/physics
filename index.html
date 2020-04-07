@@ -3,6 +3,27 @@
   <head>
     <title>Jason Eggert Software Werks</title>
     <meta charset="UTF-8" />
+    <style>
+      .portButton {
+        z-index: 130000;
+        position: fixed;
+        top: 90%;
+        right: 10%;
+        outline: 0;
+        border: 0;
+        padding: 10px 20px;
+        background-color: rgb(172, 241, 242);
+        color: #70C5B2;
+        font-weight: bold;
+        font-size: 24px;
+        cursor: pointer;
+        border-radius: 4px;
+      }
+
+      .portButton:hover {
+        background-color:#fff;
+      }
+    </style>
   </head>
 
   <body>
@@ -20,6 +41,7 @@
       </ul>
       <div id="eggEl"></div>
     </nav>
+    <button onclick="window.location.href = './portfolio/index.html'" class="portButton">View Portfolio</a>
 
     <script src="src/index.js"></script>
   </body>

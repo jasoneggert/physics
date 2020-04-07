@@ -1,0 +1,42 @@
+$theme-color: #0ADCD5;
+
+::-moz-selection { /* Code for Firefox */
+    color: #fff;
+    background: $theme-color;
+}
+
+::selection {
+    color: #fff; 
+    background: $theme-color;
+}
+.ip-header .ip-loader svg path.ip-loader-circle {
+	stroke: $theme-color;
+}
+
+.theme-color,
+.menu-wrapper header nav ul li.active > a,
+.menu-wrapper header nav ul li a:hover,
+.atom-portfolio-filter a.active,
+.atom-portfolio-filter a:hover,
+.copyright p a:hover,
+.page-title h1 a:hover,
+.blog-list .blog-title a:hover,
+.blog-list .date:hover,
+.post-meta a {
+	color: $theme-color;
+}
+.menu-wrapper header nav ul li.active > a,
+.atom-portfolio-filter a:after,
+.blog-list blockquote:hover,
+input:focus,
+textarea:focus {
+	border-color: $theme-color;
+}
+.btn-theme,
+.btn-dark:hover,
+.atom-portfolio-filter a.active:after,
+.social-icons a:hover,
+.social-icons a:focus,
+.blog-list blockquote:hover {
+	background-color: $theme-color;
+}

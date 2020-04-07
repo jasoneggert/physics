@@ -1,0 +1,64 @@
+/*write some responsive code here */
+/* Portrait tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .atom-work-item .desc {
+    transform: translate(-30%, -50%); } }
+
+/* Portrait tablets and small desktops */
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+  body {
+    font-size: 14px; }
+  .menu-wrapper header .mobile-menu {
+    display: block; }
+  .menu-wrapper header {
+    margin-top: 0; }
+  .menu-wrapper header .logo {
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    line-height: 0; }
+    .menu-wrapper header .logo img {
+      width: 100px; }
+  .menu-wrapper header nav {
+    float: left;
+    line-height: 25px;
+    margin-top: 75px;
+    width: 100%;
+    background-color: #3b3b3b; }
+  .menu-wrapper header nav ul {
+    display: none; }
+  .menu-wrapper header nav ul li {
+    display: block;
+    margin: 0;
+    border-bottom: 1px solid #757575;
+    padding: 8px 15px; }
+  .menu-wrapper header nav ul li ul {
+    display: block;
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+    border: none; }
+  .menu-wrapper header nav ul li ul li {
+    padding: 0; }
+  .menu-wrapper header nav ul li ul li:last-child {
+    border-bottom: none; }
+  .menu-wrapper header nav ul li ul li a {
+    padding: 8px 15px;
+    color: #848484; }
+  .menu-wrapper header nav ul li ul li ul {
+    display: block;
+    position: relative;
+    left: 0;
+    opacity: 1 !important;
+    visibility: visible !important;
+    border: none; }
+  .menu-wrapper header nav ul li ul li ul li {
+    margin-left: 12px !important; }
+  .menu-wrapper header nav ul li a {
+    font-size: 13px; }
+  .about-number {
+    flex: 100px; } }
+
+/* Landscape phones and smaller */
+/* portrait phones */
