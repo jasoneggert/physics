@@ -20,7 +20,7 @@ export default class Balls {
 
   setup(scene, W, H) {
     console.log('W: ', W);
-    const color = '#70C5B2'
+    const color = '#0ADCD5'
     this.mesh = new THREE.InstancedMesh(
       new THREE.SphereBufferGeometry(this.size, 16, 16),
       new THREE.MeshPhongMaterial({ color: color }),
@@ -37,6 +37,7 @@ export default class Balls {
         scene.add(model);
         if (model) model.rotation.x += 1.333;
         if (model)  model.position.x = -100;
+        if (model)  model.position.y = -80;
         console.log('model: ', model);
 
       },
