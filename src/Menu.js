@@ -12,6 +12,7 @@ export default class Menu {
     this.H = window.innerHeight - window.innerHeight / 2;
     this.menu = new THREE.Group();
     this.baseColor = '#0ADCD5';
+    
 
     this.matbox = new C.Material({
       restitution: 0.1,

@@ -5,11 +5,13 @@
   "main": "index.html",
   "scripts": {
     "start": "parcel index.html --open",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html",
+    "scss": "node-sass --watch ./public/portfolio/scss -o ./public/portfolio/css"
   },
   "dependencies": {
     "cannon": "0.6.2",
     "gsap": "3.0.1",
+    "node-sass": "^4.13.1",
     "parcel-plugin-static-files-copy": "^2.2.1",
     "three": "0.110.0",
     "three-orbitcontrols": "2.110.1"

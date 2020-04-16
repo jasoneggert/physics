@@ -10,7 +10,6 @@ import CannonDebugRenderer from './utils/CannonDebugRenderer';
 
 // CONSTANTS
 const perspective = 3000;
-const colors = ['#0ADCD5'];
 
 export default class Scene {
   constructor() {
@@ -73,7 +72,8 @@ export default class Scene {
       antialias: true,
       canvas: this.$container
     });
-    this.renderer.setClearColor('#f7f7f7');
+    //this.renderer.setClearColor('#f7f7f7');
+     this.renderer.setClearColor('#1f1f1f');
     this.renderer.setSize(this.W, this.H);
     this.renderer.setPixelRatio(window.devicePixelRatio);
 
